@@ -1,16 +1,33 @@
-#take as many as is given
+#take as many as is given, min 2
 
 def add(numList):
     return sum(numList)
 
-def subtract(num1, num2):
-    return num1 - num2
+def subtract(numList):
+    total = numList[0] - sum(numList[1:])
+    return total
 
-def multiply(num1, num2):
-    return num1 * num2
+def multiply(numList):
+    total = 1
+    for i in numList:
+        total = total * i
+    return total
 
-def divide(num1, num2):
-    return float(num1)/float(num2)
+def divide(numList):
+    if 0 in numList[1:]:
+        return "You can't divide by zero, dummy!!" 
+    elif numList[0] == 0:
+        total = 0.
+        return total
+    else:
+        total = numList[0]*numList[0]
+      #  print "Index 0", numList[0]
+      #  print total
+        for i in numList:
+      #      print "i = ", i
+            total = float(total) / float(i)
+      #      print "total = ", total
+        return total
 
 #take exactly 1
 

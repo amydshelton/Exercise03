@@ -34,5 +34,11 @@ while True:
             print arithmetic.square(tokens[1])
         elif tokens[0] == "cube" and len(tokens) == 2:
             print arithmetic.cube(tokens[1])
+        elif tokens[0] == "*" and len(tokens) >= 3:
+            print arithmetic.multiply(tokens[1:])
+        elif tokens[0] == "-" and len(tokens) >= 3:
+            print arithmetic.subtract(tokens[1:])
+        elif tokens[0] == "/" and len(tokens) >= 3:
+            print arithmetic.divide(tokens[1:])
         else:
             print "I don't understand."
