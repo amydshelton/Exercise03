@@ -1,10 +1,10 @@
 import arithmetic
 
 def valid_operator(tokenList):
-    operators = ["+", "-", "/", "*", "square", "cube", "pow", "mod"]
-    print "Token list length: ",len(tokenList)
+    operators = ["+", "-", "/", "*", "square", "cube", "power", "mod"]
+  #  print "Token list length: ",len(tokenList)
     
-    if tokenList[0] in operators and len(tokenList) >= 3:
+    if tokenList[0] in operators:
         my_bool = True
         #print "my_bool: %r" % my_bool
         for x in range(1, len(tokenList)):
@@ -24,8 +24,15 @@ while True:
     if tokens[0] == "q" or tokens[0] == "Q":
         break
     if valid_operator(tokens):
-        # make a loop to int all the tokens
-        tokens[1] = int(tokens[1])
-        tokens[2] = int(tokens[2])
-        if tokens[0] == "+":
-            print arithmetic.add(tokens[1],tokens[2])
+        for x in range(1, len(tokens)):
+            tokens[x] = int(tokens[x])
+        if tokens[0] == "+" and len(tokens) >= 3:
+            print arithmetic.add(tokens[1:])
+        elif tokens[0] == "power" and len(tokens) == 3:
+            print arithmetic.power(tokens[1], tokens[2])
+        elif tokens[0] == "square" and len(tokens) == 2:
+            print arithmetic.square(tokens[1])
+        elif tokens[0] == "cube" and len(tokens) == 2:
+            print arithmetic.cube(tokens[1])
+        else:
+            print "I don't understand."
