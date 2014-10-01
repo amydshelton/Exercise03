@@ -27,7 +27,7 @@ while True:
 
         if tokens[0] == "q" or tokens[0] == "Q":
             break
-        if valid_ints:
+        if valid_ints(tokens[1],tokens[2]):
             tokens[1] = int(tokens[1])
             tokens[2] = int(tokens[2])
             if tokens[0] == "+":
