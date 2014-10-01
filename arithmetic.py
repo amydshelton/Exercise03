@@ -21,13 +21,18 @@ def divide(numList):
         return total
     else:
         total = numList[0]*numList[0]
-      #  print "Index 0", numList[0]
-      #  print total
         for i in numList:
-      #      print "i = ", i
             total = float(total) / float(i)
-      #      print "total = ", total
         return total
+
+def power(numList):
+    total = numList[0]
+    x = 1
+    while x < len(numList):
+        total = total**numList[x]
+        x += 1
+    return total
+
 
 #take exactly 1
 
@@ -43,5 +48,4 @@ def cube(num1):
 def mod(num1, num2):
     return num1 % num2
 
-def power(num1, num2):
-    return pow(num1, num2)
+

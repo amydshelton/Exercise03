@@ -28,8 +28,8 @@ while True:
             tokens[x] = int(tokens[x])
         if tokens[0] == "+" and len(tokens) >= 3:
             print arithmetic.add(tokens[1:])
-        elif tokens[0] == "power" and len(tokens) == 3:
-            print arithmetic.power(tokens[1], tokens[2])
+        elif tokens[0] == "power" and len(tokens) >= 3:
+            print arithmetic.power(tokens[1:])
         elif tokens[0] == "square" and len(tokens) == 2:
             print arithmetic.square(tokens[1])
         elif tokens[0] == "cube" and len(tokens) == 2:
@@ -40,5 +40,7 @@ while True:
             print arithmetic.subtract(tokens[1:])
         elif tokens[0] == "/" and len(tokens) >= 3:
             print arithmetic.divide(tokens[1:])
+        elif tokens[0] == "mod" and len(tokens) == 3:
+            print arithmetic.mod(tokens[1], tokens[2])
         else:
             print "I don't understand."
