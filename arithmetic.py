@@ -36,11 +36,11 @@ def power(numList):
 
 #take exactly 1
 
-def square(num1):
-    return pow(num1, 2)
+def square(numList):
+    return numList[0]**2
 
-def cube(num1):
-    return pow(num1, 3)
+def cube(numList):
+    return numList[0]**3
 
 
 #take exactly 2
