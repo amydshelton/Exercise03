@@ -1,28 +1,20 @@
 import arithmetic
 
-def valid_operator(tokenList):
-    operators = ["+", "-", "/", "*", "square", "cube", "power", "mod", "add", 
-    "divide", "subtract", "multiply", "%", "pow"]
-  #  print "Token list length: ",len(tokenList)
-    
-    if tokenList[0] in operators:
-        my_bool = True
-        for x in range(1, len(tokenList)):
-            if tokenList[x].isdigit() == False:
-                print "I don't understand."
-                my_bool = False
-                break
-        return my_bool
+def is_int(tokenList):
+    digits = "0123456789"
+    for x in tokenList:
+        for i in x:
+            if i not in digits:
+                return False
     else:
-        print "I don't understand."
-        return False
+        return True
 
 while True: 
     input = raw_input("> ")
     tokens = input.split() 
     if tokens[0] in ["q", "Q", "quit", "QUIT", "Quit"]:
         break
-    if valid_operator(tokens):
+    if is_int(tokens[1:]):
         for x in range(1, len(tokens)):
             tokens[x] = int(tokens[x])
         if tokens[0] in ["+","add"] and len(tokens) >= 3:
@@ -42,4 +34,6 @@ while True:
         elif tokens[0] in ["mod","%"] and len(tokens) == 3:
             print arithmetic.mod(tokens[1], tokens[2])
         else:
-            print "I don't understand."
+            print "Incorrect number of inputs or incorrect operator."
+    else:
+        print "Arguments must be integers."
